@@ -24,7 +24,3 @@ after_failure:
 env:
   global:
     - unsecure=abc123
-    - secure: oANMwCY4XDvAuBHwLnmyqbF7uaLYaAtGw/RID3gIdayOHLCQR22Zhq6tcXZG0ONtf3/wlIBK4XLauAgtDZwu1ks5ImbigwOsh3m9TVO6xVxTcagjPBUTx4pMbtvzu2BTouhhr1xJ0UeGIqR8/G8cITVLSIRCg5lwABFOsHfpEsW4R197UQCXMdl+1YBZeW5NdhsLS9OQWlA3MTcBlZr+5DJuBHe41Jw6GOXJ9HykcRQv6pYoCOQtGAD91sUB9DV/6Q1E/yA4rUbWMyO8yeuDh+hznstS4hyaX//uH8XS0MyEB0zFu3QfWhDsTktyskdlh985ibdxTDssxK/PN6XGMPjbxkZfolixGdoIBq6dBAN1hxuq3Jr65R+1W6fnAw63W0gdSWAYMGgTJMBlEqraVYTVyiu0X8GrDryYq4KQoXnFzpUQdxvVLH3UMTQ/qg3gM5z37ZvtBkSvlfN86Vm+R0f5atj3JTySrzsyWZP9cWzDtwXu1huT+BKn7zABj2WM1Q5KV0VO7CTL2mT3RmdQGL/0yQMerLWuKZFk7T/ZiSf6Z93I1pnZc16kWcQrAqset/HI9yxWfYmF2KDiPrOAUexrenE1mxzxKbzDYVFNKO/peXdRIJmugqWwlXuZo/LhOnp6MIBubNNzty9k2SuuLnl3cmniwdzib4EA+7HwtVY=
-before_install:
-  - openssl aes-256-cbc -K $encrypted_355e94ba1091_key -iv $encrypted_355e94ba1091_iv
-    -in super_secret.txt.enc -out super_secret.txt -d
