@@ -1,21 +1,17 @@
-os: linux
+language: node_js
+node_js:
+  - "12"
 
-language: java
 services:
-  - docker
-cache: bundler
-dist: focal
+  - redis-server
 
-install: skip
+before_install:
+  - sudo systemctl start redis-server
 
-jobs:
-  include:
-    - name: failing
-      script: true
+install:
+  - cd $TRAVIS_BUILD_DIR
+  - npm init -y  # This creates a package.json file if it's missing
+  - npm install
 
-after_success:
-  - echo done
-  - echo $TRAVIS_TEST_RESULT
-after_failure:
-  - echo failed
-  - echo $TRAVIS_TEST_RESULT
+script:
+  - npm test
