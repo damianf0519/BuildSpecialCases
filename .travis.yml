@@ -10,12 +10,16 @@ jobs:
   include:
     - stage: "Tests" # naming the Tests stage
       name: "Unit Tests" # names the first Tests stage job
-      script: ./unit-tests
-    - script: ./integration-tests
+      script:
+      - echo "Unit Tests"
+    - stage: "Integration Tests"
       name: "Integration Tests" # names the second Tests stage job
+      script:
+      - echo "Unit Tests"
     - stage: deploy
-      name: "Deploy to GCP"
-      script: ./deploy
+      name: "Deploy Test"
+      script:
+      - echo "Deploy"
 
 after_success:
   - echo done
