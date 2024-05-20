@@ -1,17 +1,30 @@
 os: linux
-
 language: java
 services:
   - docker
-cache: bundler
-dist: focal
-
+cashe: bundler
+dist: bionic
 install: skip
 
 jobs:
   include:
-    - name: failing
-      script: true
+    - name: "Java 8 Build"
+      jdk: openjdk8
+      script:
+        - echo "Running build with Java 8"
+        - true
+
+    - name: "Java 11 Build"
+      jdk: openjdk11
+      script:
+        - echo "Running build with Java 11"
+        - true
+
+    - name: "Java 17 Build"
+      jdk: openjdk17
+      script:
+        - echo "Running build with Java 17"
+        - true
 
 after_success:
   - echo done
